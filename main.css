@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter';
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 10px 20px;
+}
+
+.navbar-items {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    white-space: nowrap;
+}
+
+.navbar-items ul {
+    list-style: none;
+    display: flex;
+    gap: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-items ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: color 0.3s ease;
+}
+
+.navbar-items ul li a:hover {
+    color: #d73c00; 
+}
+
+.home {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "item1 item4"
+    "item2 item4"
+    "item3 item4";
+    text-align: left;
+    padding: 70px 50px;
+}
+
+.text-content {grid-area: item1;}
+.pizza-images {grid-area: item2;}
+.line-img {grid-area: item3;}
+.pizza-group {grid-area: item4;}
+
+
+.text-content h3:first-of-type {
+    font-size: 18px;
+    color: #333; 
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.text-content h1 {
+    font-size: 72px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #000; 
+}
+
+.text-content h3:last-of-type {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.pizza-images {
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.pizza-images img {
+    width: 120px; 
+    height: auto;
+    border-radius: 50%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; 
+}
+
+.pizza-images img:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.pizza-group {
+    display: flex; 
+    justify-content: right;
+    margin-top: -100px;
+}
+
+.pizza-group img {
+    width: 500px; 
+    height: auto; 
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(10%); 
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.line-img{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .navbar-logo img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+    }
+
+    .navbar-items ul {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        text-align: center;
+        padding: 0;
+    }
+
+    .navbar-items ul li a {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+
+    .navbar-items ul li a:hover {
+        color: #d73c00;
+    }
+
+    .home {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "item1"
+            "item4"
+            "item2"
+            "item3";
+        padding: 40px 20px;
+    }
+
+    .text-content {
+        text-align: center;
+    }
+
+    .text-content h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .text-content h3:first-of-type {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .text-content h3:last-of-type {
+        margin-bottom: 50px;
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    .pizza-images {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .pizza-images img {
+        width: 100px;
+        height: auto;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .pizza-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pizza-group img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .line-img {
+        justify-content: left;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 8px 16px;
+    }
+
+    .navbar-logo img {
+        width: 60px;
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .navbar-items ul {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        text-align: center;
+        padding: 0;
+        padding-left: 20px;
+    }
+
+    .navbar-items ul li a {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .navbar-items ul li a:hover {
+        color: #d73c00;
+    }
+
+    .home {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "item1"
+            "item4"
+            "item2"
+            "item3";
+        padding: 20px 15px;
+        gap: 10px;
+    }
+
+    .text-content {
+        text-align: center;
+    }
+
+    .text-content h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .text-content h3:first-of-type {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .text-content h3:last-of-type {
+        margin-bottom: 30px;
+        font-size: 12px;
+        max-width: 100%;
+    }
+
+    .pizza-images {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .pizza-images img {
+        width: 70px;
+        height: auto;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .pizza-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pizza-group img {
+        width: 90%;
+        max-width: 320px;
+        height: auto;
+        margin-top: 80px;
+    }
+
+    .line-img {
+        justify-content: left;
+        padding-left: 0;
+    }
+}
+
+@media (min-width: 1300px) and (max-width: 2000px) {
+    .navbar {
+        padding: 15px 30px;
+    }
+
+    .navbar-logo {
+        padding-left: 40px;
+    }
+
+    .navbar-items ul {
+        gap: 40px;
+    }
+
+    .navbar-items ul li a {
+        font-size: 18px;
+        padding: 12px 18px;
+    }
+
+    .navbar-items ul li a:hover {
+        color: #d73c00;
+    }
+
+    .home {
+        padding: 80px 100px;
+        gap: 30px;
+    }
+
+    .text-content {
+        text-align: left;
+    }
+
+    .text-content h1 {
+        font-size: 80px;
+        margin-bottom: 30px;
+    }
+
+    .text-content h3:first-of-type {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+
+    .text-content h3:last-of-type {
+        font-size: 18px;
+        max-width: 700px;
+        margin-bottom: 50px;
+    }
+
+    .pizza-images {
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .pizza-images img {
+        width: 150px;
+        height: auto;
+        border-radius: 50%;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .pizza-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pizza-group img {
+        width: 600px;
+        height: auto;
+        margin-top: 30px;
+    }
+
+    .line-img {
+        justify-content: left;
+        padding-left: 0;
+    }
+}
+
+
+
